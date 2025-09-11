@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Educator Portfolio</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: #e2e8f0;
+            min-height: 100vh;
+        }
+        
+        .code-font {
+            font-family: 'JetBrains Mono', monospace;
+        }
+        
+        .card-glass {
+            background: rgba(15, 23, 42, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .hero-bg {
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="%230f172a"/><path d="M0 50 L100 50 M50 0 L50 100" stroke="%231e293b" stroke-width="1"/></svg>');
+        }
+        
+        .skill-bar {
+            transition: width 1.5s ease-in-out;
+        }
+        
+        .terminal {
+            background: #0f172a;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+        }
+        
+        .terminal-header {
+            background: #1e293b;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+            padding: 12px;
+        }
+        
+        .terminal-body {
+            padding: 20px;
+            font-family: 'JetBrains Mono', monospace;
+            overflow-x: auto;
+        }
+        
+        .prompt { color: #78e08f; }
+        .command { color: #f8a5c2; }
+        .output { color: #e2e8f0; }
+        
+        .typewriter {
+            overflow: hidden;
+            border-right: .15em solid #78e08f;
+            white-space: nowrap;
+            animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+        }
+        
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+        
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: #78e08f; }
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <!-- Navigation -->
+    <nav class="bg-slate-900 bg-opacity-90 backdrop-blur-md fixed w-full z-10">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <a href="#" class="text-xl font-bold text-white flex items-center">
+                    <span class="code-font bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-emerald-400">TechEducator</span>
+                </a>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#about" class="text-slate-300 hover:text-white transition">About</a>
+                    <a href="#skills" class="text-slate-300 hover:text-white transition">Skills</a>
+                    <a href="#teaching" class="text-slate-300 hover:text-white transition">Teaching</a>
+                    <a href="#contact" class="text-slate-300 hover:text-white transition">Contact</a>
+                </div>
+                <div class="md:hidden">
+                    <button id="menu-toggle" class="text-slate-300 hover:text-white focus:outline-none">
+                        <i class="bi bi-list text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-slate-800 px-4 pt-2 pb-4">
+            <a href="#about" class="block py-2 text-slate-300 hover:text-white transition">About</a>
+            <a href="#skills" class="block py-2 text-slate-300 hover:text-white transition">Skills</a>
+            <a href="#teaching" class="block py-2 text-slate-300 hover:text-white transition">Teaching</a>
+            <a href="#contact" class="block py-2 text-slate-300 hover:text-white transition">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero-bg min-h-screen flex items-center pt-16 pb-28">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 text-center md:text-left mb-12 md:mb-0">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+                    <span class="block">Expert Instructor in</span>
+                    <span class="code-font bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-emerald-400 typewriter">C, Python, Bash & Linux</span>
+                </h1>
+                <p class="text-xl text-slate-300 mb-8 max-w-lg mx-auto md:mx-0">
+                    Transforming complex concepts into understandable knowledge. Hire me to teach or consult on programming and system administration.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                    <a href="#contact" class="px-6 py-3 bg-gradient-to-r from-cyan-500 to-emerald-500 text-white font-medium rounded-lg hover:opacity-90 transition shadow-lg shadow-cyan-500/20">
+                        Hire Me to Teach
+                    </a>
+                    <a href="#contact" class="px-6 py-3 bg-slate-700 text-white font-medium rounded-lg hover:bg-slate-600 transition">
+                        Contact Me
+                    </a>
+                </div>
+            </div>
+            <div class="md:w-1/2 flex justify-center">
+                <div class="terminal max-w-md w-full">
+                    <div class="terminal-header flex items-center">
+                        <div class="flex space-x-2">
+                            <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                            <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                            <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                        </div>
+                        <div class="text-center flex-grow text-sm code-font">bash</div>
+                    </div>
+                    <div class="terminal-body">
+                        <div class="mb-2"><span class="prompt">$ </span><span class="command">whoami</span></div>
+                        <div class="mb-4 output">tech-educator</div>
+                        
+                        <div class="mb-2"><span class="prompt">$ </span><span class="command">cat skills.txt</span></div>
+                        <div class="mb-4 output">
+                            <div>> C Programming</div>
+                            <div>> Python Development</div>
+                            <div>> Bash Scripting</div>
+                            <div>> Linux Administration</div>
+                        </div>
+                        
+                        <div class="mb-2"><span class="prompt">$ </span><span class="command">find ./teaching -name "experience"</span></div>
+                        <div class="mb-4 output">./teaching/universities/online-courses/corporate-training</div>
+                        
+                        <div class="mb-2"><span class="prompt">$ </span><span class="command">./contact_me.sh</span></div>
+                        <div class="output">Let's connect on LinkedIn, GitHub or TikTok!</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="py-20">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16">About Me</h2>
+            <div class="card-glass max-w-4xl mx-auto p-8 md:p-12">
+                <p class="text-lg mb-6">
+                    I am a dedicated technology educator with expertise in low-level programming, scripting languages, and Linux system administration. My passion lies in breaking down complex technical concepts into digestible lessons that students can easily understand and apply.
+                </p>
+                <p class="text-lg mb-6">
+                    With years of experience in both industry and education, I bring real-world knowledge to the classroom. Whether teaching the fundamentals of C programming or advanced Linux system administration, I focus on practical, hands-on learning that prepares students for real challenges.
+                </p>
+                <p class="text-lg">
+                    My teaching methodology emphasizes understanding core principles, problem-solving techniques, and best practices that are essential for success in the technology field.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-slate-900 bg-opacity-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16">Technical Skills</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <!-- Skill Card 1 -->
+                <div class="card-glass p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 rounded-full bg-cyan-900 flex items-center justify-center mr-4">
+                            <i class="bi bi-code-slash text-cyan-400"></i>
+                        </div>
+                        <h3 class="text-xl font-bold">C Programming</h3>
+                    </div>
+                    <p class="text-slate-300 mb-4">Expert in low-level programming, system programming, algorithms, and data structures using C.</p>
+                    <div class="w-full bg-slate-700 rounded-full h-2.5">
+                        <div class="skill-bar bg-cyan-500 h-2.5 rounded-full" style="width: 95%"></div>
+                    </div>
+                </div>
+                
+                <!-- Skill Card 2 -->
+                <div class="card-glass p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 rounded-full bg-emerald-900 flex items-center justify-center mr-4">
+                            <i class="bi bi-file-code text-emerald-400"></i>
+                        </div>
+                        <h3 class="text-xl font-bold">Python</h3>
+                    </div>
+                    <p class="text-slate-300 mb-4">Proficient in Python for scripting, automation, data analysis, and teaching programming concepts.</p>
+                    <div class="w-full bg-slate-700 rounded-full h-2.5">
+                        <div class="skill-bar bg-emerald-500 h-2.5 rounded-full" style="width: 90%"></div>
+                    </div>
+                </div>
+                
+                <!-- Skill Card 3 -->
+                <div class="card-glass p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 rounded-full bg-amber-900 flex items-center justify-center mr-4">
+                            <i class="bi bi-terminal text-amber-400"></i>
+                        </div>
+                        <h3 class="text-xl font-bold">Bash Scripting</h3>
+                    </div>
+                    <p class="text-slate-300 mb-4">Skilled in writing efficient shell scripts for automation, system administration, and workflow optimization.</p>
+                    <div class="w-full bg-slate-700 rounded-full h-2.5">
+                        <div class="skill-bar bg-amber-500 h-2.5 rounded-full" style="width: 88%"></div>
+                    </div>
+                </div>
+                
+                <!-- Skill Card 4 -->
+                <div class="card-glass p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 rounded-full bg-purple-900 flex items-center justify-center mr-4">
+                            <i class="bi bi-ubuntu text-purple-400"></i>
+                        </div>
+                        <h3 class="text-xl font-bold">Linux</h3>
+                    </div>
+                    <p class="text-slate-300 mb-4">Extensive experience with Linux systems administration, troubleshooting, and teaching Linux fundamentals.</p>
+                    <div class="w-full bg-slate-700 rounded-full h-2.5">
+                        <div class="skill-bar bg-purple-500 h-2.5 rounded-full" style="width: 93%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Teaching Section -->
+    <section id="teaching" class="py-20">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16">Teaching Services</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- Teaching Card 1 -->
+                <div class="card-glass p-6 flex flex-col">
+                    <div class="w-14 h-14 rounded-full bg-cyan-900 flex items-center justify-center mb-6">
+                        <i class="bi bi-mortarboard text-cyan-400 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">University Courses</h3>
+                    <p class="text-slate-300 mb-4 flex-grow">Comprehensive programming and system administration courses tailored for computer science students.</p>
+                    <ul class="text-slate-300 mb-6 space-y-2">
+                        <li class="flex items-center"><i class="bi bi-check-circle-fill text-cyan-500 mr-2"></i> C Programming</li>
+                        <li class="flex items-center"><i class="bi bi-check-circle-fill text-cyan-500 mr-2"></i> Linux Fundamentals</li>
+                        <li class="flex items-center"><i class="bi bi-check-circle-fill text-cyan-500 mr-2"></i> Scripting with Bash & Python</li>
+                    </ul>
+                </div>
+                
+                <!-- Teaching Card 2 -->
+                <div class="card-glass p-6 flex flex-col">
+                    <div class="w-14 h-14 rounded-full bg-emerald-900 flex items-center justify-center mb-6">
+                        <i class="bi bi-laptop text-emerald-400 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Online Courses</h3>
+                    <p class="text-slate-300 mb-4 flex-grow">Engaging online lessons with hands-on exercises and projects for remote learners.</p>
+                    <ul class="text-slate-300 mb-6 space-y-2">
+                        <li class="flex items-center"><i class="bi bi-check-circle-fill text-emerald-500 mr-2"></i> Interactive Sessions</li>
+                        <li class="flex items-center"><i class="bi bi-check-circle-fill text-emerald-500 mr-2"></i> Code Reviews</li>
+                        <li class="flex items-center"><i class="bi bi-check-circle-fill text-emerald-500 mr-2"></i> Project Guidance</li>
+                    </ul>
+                </div>
+                
+                <!-- Teaching Card 3 -->
+                <div class="card-glass p-6 flex flex-col">
+                    <div class="w-14 h-14 rounded-full bg-amber-900 flex items-center justify-center mb-6">
+                        <i class="bi bi-building text-amber-400 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Corporate Training</h3>
+                    <p class="text-slate-300 mb-4 flex-grow">Customized training programs for organizations to enhance their team's technical capabilities.</p>
+                    <ul class="text-slate-300 mb-6 space-y-2">
+                        <li class="flex items-center"><i class="bi bi-check-circle-fill text-amber-500 mr-2"></i> Team Workshops</li>
+                        <li class="flex items-center"><i class="bi bi-check-circle-fill text-amber-500 mr-2"></i> Skill Assessments</li>
+                        <li class="flex items-center"><i class="bi bi-check-circle-fill text-amber-500 mr-2"></i> Custom Curriculum</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-slate-900 bg-opacity-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16">Contact Me</h2>
+            
+            <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-2xl font-bold mb-6">Get In Touch</h3>
+                    <p class="text-slate-300 mb-8">
+                        Interested in my teaching services? Have questions about programming or Linux? Reach out to me through any of the platforms below or send me a message directly.
+                    </p>
+                    
+                    <div class="space-y-4">
+                        <!-- Social Links -->
+                        <a href="#" class="flex items-center text-slate-300 hover:text-white transition">
+                            <div class="w-10 h-10 rounded-full bg-slate-700 flex items-center justify-center mr-4">
+                                <i class="bi bi-github"></i>
+                            </div>
+                            <span>GitHub</span>
+                        </a>
+                        
+                        <a href="#" class="flex items-center text-slate-300 hover:text-white transition">
+                            <div class="w-10 h-10 rounded-full bg-slate-700 flex items-center justify-center mr-4">
+                                <i class="bi bi-linkedin"></i>
+                            </div>
+                            <span>LinkedIn</span>
+                        </a>
+                        
+                        <a href="#" class="flex items-center text-slate-300 hover:text-white transition">
+                            <div class="w-10 h-10 rounded-full bg-slate-700 flex items-center justify-center mr-4">
+                                <i class="bi bi-tiktok"></i>
+                            </div>
+                            <span>TikTok</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <form class="card-glass p-8">
+                        <div class="mb-6">
+                            <label for="name" class="block text-slate-300 mb-2">Your Name</label>
+                            <input type="text" id="name" class="w-full px-4 py-3 bg-slate-800 border border-slate-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500">
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="email" class="block text-slate-300 mb-2">Email Address</label>
+                            <input type="email" id="email" class="w-full px-4 py-3 bg-slate-800 border border-slate-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500">
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="message" class="block text-slate-300 mb-2">Your Message</label>
+                            <textarea id="message" rows="4" class="w-full px-4 py-3 bg-slate-800 border border-slate-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="w-full px-6 py-3 bg-gradient-to-r from-cyan-500 to-emerald-500 text-white font-medium rounded-lg hover:opacity-90 transition">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 bg-slate-900">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-slate-400">© 2023 Tech Educator. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+        
+        // Animate skill bars on scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const skillBars = document.querySelectorAll('.skill-bar');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const width = entry.target.style.width;
+                        entry.target.style.width = '0';
+                        setTimeout(() => {
+                            entry.target.style.width = width;
+                        }, 100);
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+            
+            skillBars.forEach(bar => {
+                observer.observe(bar);
+            });
+        });
+    </script>
+</body>
+</html>
