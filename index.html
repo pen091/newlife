@@ -181,70 +181,149 @@
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="py-20 bg-slate-900 bg-opacity-50">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16">Technical Skills</h2>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                <!-- Skill Card 1 -->
-                <div class="card-glass p-6">
-                    <div class="flex items-center mb-4">
-                        <div class="w-10 h-10 rounded-full bg-cyan-900 flex items-center justify-center mr-4">
-                            <i class="bi bi-code-slash text-cyan-400"></i>
-                        </div>
-                        <h3 class="text-xl font-bold">C Programming</h3>
-                    </div>
-                    <p class="text-slate-300 mb-4">Expert in low-level programming, system programming, algorithms, and data structures using C.</p>
-                    <div class="w-full bg-slate-700 rounded-full h-2.5">
-                        <div class="skill-bar bg-cyan-500 h-2.5 rounded-full" style="width: 95%"></div>
-                    </div>
-                </div>
-                
-                <!-- Skill Card 2 -->
-                <div class="card-glass p-6">
-                    <div class="flex items-center mb-4">
-                        <div class="w-10 h-10 rounded-full bg-emerald-900 flex items-center justify-center mr-4">
-                            <i class="bi bi-file-code text-emerald-400"></i>
-                        </div>
-                        <h3 class="text-xl font-bold">Python</h3>
-                    </div>
-                    <p class="text-slate-300 mb-4">Proficient in Python for scripting, automation, webapp development, and teaching programming concepts.</p>
-                    <div class="w-full bg-slate-700 rounded-full h-2.5">
-                        <div class="skill-bar bg-emerald-500 h-2.5 rounded-full" style="width: 90%"></div>
-                    </div>
-                </div>
-                
-                <!-- Skill Card 3 -->
-                <div class="card-glass p-6">
-                    <div class="flex items-center mb-4">
-                        <div class="w-10 h-10 rounded-full bg-amber-900 flex items-center justify-center mr-4">
-                            <i class="bi bi-terminal text-amber-400"></i>
-                        </div>
-                        <h3 class="text-xl font-bold">Bash Scripting</h3>
-                    </div>
-                    <p class="text-slate-300 mb-4">Skilled in writing efficient shell scripts for automation, system administration, and workflow optimization.</p>
-                    <div class="w-full bg-slate-700 rounded-full h-2.5">
-                        <div class="skill-bar bg-amber-500 h-2.5 rounded-full" style="width: 88%"></div>
-                    </div>
-                </div>
-                
-                <!-- Skill Card 4 -->
-                <div class="card-glass p-6">
-                    <div class="flex items-center mb-4">
-                        <div class="w-10 h-10 rounded-full bg-purple-900 flex items-center justify-center mr-4">
-                            <i class="bi bi-ubuntu text-purple-400"></i>
-                        </div>
-                        <h3 class="text-xl font-bold">Linux</h3>
-                    </div>
-                    <p class="text-slate-300 mb-4">Extensive experience with Linux systems administration, troubleshooting, and teaching Linux fundamentals.</p>
-                    <div class="w-full bg-slate-700 rounded-full h-2.5">
-                        <div class="skill-bar bg-purple-500 h-2.5 rounded-full" style="width: 93%"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<section id="skills" class="py-20 bg-slate-900 bg-opacity-50">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl md:text-4xl font-bold text-center mb-16">Technical Skills</h2>
 
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+      <!-- Skill Card 1 -->
+      <div 
+        class="card-glass p-6 cursor-pointer hover:shadow-lg transition"
+        onclick="showOutline('C Programming', [
+          'Introduction to C and Compilers',
+          'Variables, Data Types, and Operators',
+          'Control Structures: if, switch, loops',
+          'Functions and Recursion',
+          'Pointers and Memory Management',
+          'Structures and Unions',
+          'File Handling',
+          'System Programming Basics'
+        ])"
+      >
+        <div class="flex items-center mb-4">
+          <div class="w-10 h-10 rounded-full bg-cyan-900 flex items-center justify-center mr-4">
+            <i class="bi bi-code-slash text-cyan-400"></i>
+          </div>
+          <h3 class="text-xl font-bold">C Programming</h3>
+        </div>
+        <p class="text-slate-300 mb-4">Expert in low-level programming, system programming, algorithms, and data structures using C.</p>
+        <div class="w-full bg-slate-700 rounded-full h-2.5">
+          <div class="skill-bar bg-cyan-500 h-2.5 rounded-full" style="width: 95%"></div>
+        </div>
+      </div>
+
+      <!-- Skill Card 2 -->
+      <div 
+        class="card-glass p-6 cursor-pointer hover:shadow-lg transition"
+        onclick="showOutline('Python', [
+          'Introduction to Python',
+          'Data Types, Lists, Tuples, and Dictionaries',
+          'Conditional Statements and Loops',
+          'Functions and Modules',
+          'Object-Oriented Programming',
+          'File Handling',
+          'Web Development Basics with Flask/Django',
+          'Automation and Scripting Projects'
+        ])"
+      >
+        <div class="flex items-center mb-4">
+          <div class="w-10 h-10 rounded-full bg-emerald-900 flex items-center justify-center mr-4">
+            <i class="bi bi-file-code text-emerald-400"></i>
+          </div>
+          <h3 class="text-xl font-bold">Python</h3>
+        </div>
+        <p class="text-slate-300 mb-4">Proficient in Python for scripting, automation, webapp development, and teaching programming concepts.</p>
+        <div class="w-full bg-slate-700 rounded-full h-2.5">
+          <div class="skill-bar bg-emerald-500 h-2.5 rounded-full" style="width: 90%"></div>
+        </div>
+      </div>
+
+      <!-- Skill Card 3 -->
+      <div 
+        class="card-glass p-6 cursor-pointer hover:shadow-lg transition"
+        onclick="showOutline('Bash Scripting', [
+          'Introduction to Shell and Linux Basics',
+          'Writing Your First Script',
+          'Variables and Operators',
+          'Conditional Statements',
+          'Loops and Iterations',
+          'Functions in Bash',
+          'File Manipulation',
+          'Automating Tasks and Cron Jobs'
+        ])"
+      >
+        <div class="flex items-center mb-4">
+          <div class="w-10 h-10 rounded-full bg-amber-900 flex items-center justify-center mr-4">
+            <i class="bi bi-terminal text-amber-400"></i>
+          </div>
+          <h3 class="text-xl font-bold">Bash Scripting</h3>
+        </div>
+        <p class="text-slate-300 mb-4">Skilled in writing efficient shell scripts for automation, system administration, and workflow optimization.</p>
+        <div class="w-full bg-slate-700 rounded-full h-2.5">
+          <div class="skill-bar bg-amber-500 h-2.5 rounded-full" style="width: 88%"></div>
+        </div>
+      </div>
+
+      <!-- Skill Card 4 -->
+      <div 
+        class="card-glass p-6 cursor-pointer hover:shadow-lg transition"
+        onclick="showOutline('Linux', [
+          'Linux Overview and Distributions',
+          'File System Structure',
+          'User and Group Management',
+          'Permissions and Ownership',
+          'Package Management',
+          'System Monitoring and Logs',
+          'Networking and Security Basics',
+          'Linux Shell and Commands'
+        ])"
+      >
+        <div class="flex items-center mb-4">
+          <div class="w-10 h-10 rounded-full bg-purple-900 flex items-center justify-center mr-4">
+            <i class="bi bi-ubuntu text-purple-400"></i>
+          </div>
+          <h3 class="text-xl font-bold">Linux</h3>
+        </div>
+        <p class="text-slate-300 mb-4">Extensive experience with Linux systems administration, troubleshooting, and teaching Linux fundamentals.</p>
+        <div class="w-full bg-slate-700 rounded-full h-2.5">
+          <div class="skill-bar bg-purple-500 h-2.5 rounded-full" style="width: 93%"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Modal -->
+<div id="outlineModal" class="fixed inset-0 hidden items-center justify-center bg-black bg-opacity-70 z-50">
+  <div class="bg-slate-800 rounded-2xl p-6 max-w-lg w-full text-white relative">
+    <button onclick="closeOutline()" class="absolute top-2 right-2 text-gray-400 hover:text-white text-2xl">&times;</button>
+    <h3 id="outlineTitle" class="text-2xl font-bold mb-4"></h3>
+    <ul id="outlineList" class="list-disc list-inside space-y-2"></ul>
+  </div>
+</div>
+
+<script>
+  function showOutline(title, topics) {
+    document.getElementById('outlineTitle').innerText = title + " - Course Outline";
+    
+    const list = document.getElementById('outlineList');
+    list.innerHTML = '';
+    topics.forEach(topic => {
+      const li = document.createElement('li');
+      li.textContent = topic;
+      list.appendChild(li);
+    });
+
+    document.getElementById('outlineModal').classList.remove('hidden');
+    document.getElementById('outlineModal').classList.add('flex');
+  }
+
+  function closeOutline() {
+    document.getElementById('outlineModal').classList.remove('flex');
+    document.getElementById('outlineModal').classList.add('hidden');
+  }
+</script>
+     
     <!-- Teaching Section -->
     <section id="teaching" class="py-20">
         <div class="container mx-auto px-4">
